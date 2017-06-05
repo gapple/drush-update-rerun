@@ -1,5 +1,13 @@
 <?php
 
+/**
+ * @file
+ * Drush command to re-execute a single module update hook.
+ */
+
+/**
+ * Implements hook_drush_command().
+ */
 function update_rerun_drush_command() {
   $commands = array();
 
@@ -7,7 +15,7 @@ function update_rerun_drush_command() {
     'description' => 'Rerun an update hook for a module',
     'aliases' => array('urr'),
     'arguments' => array(
-      'module' => 'Module', 
+      'module' => 'Module',
       'version' => 'Update hook number',
     ),
     'required-arguments' => TRUE,
@@ -17,10 +25,13 @@ function update_rerun_drush_command() {
   return $commands;
 }
 
+/**
+ * Update Rerun command callback.
+ */
 function drush_update_rerun($module, $version) {
 
   if (!module_load_install($module)) {
-    drush_log('Unable to load ' . $module .'.install', 'error');
+    drush_log('Unable to load ' . $module . '.install', 'error');
     return;
   }
 
