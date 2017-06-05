@@ -1,0 +1,15 @@
+{
+  "name": "gapple/drush-update-rerun",
+  "description": "Drush command to re-execute a single module update hook",
+  "type": "drupal-drush",
+  "license": "MIT",
+  "require": {
+    "php": ">=5.5.9"
+  },
+  "require-dev": {
+    "drush/drush": "^8.0"
+  },
+  "suggest": {
+    "composer/installers": "Install plugin to correct location"
+  }
+}
